@@ -53,7 +53,9 @@ creditsafe/
      ```
 
 3. Install the required packages:
+```
 pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -64,6 +66,11 @@ python data_preparation.py
 2. Run the main script:
 ```
 python main.py
+```
+
+3. Run the view database script:
+```
+python view_database.py
 ```
 
 This will execute the entire pipeline: data preparation, model training, evaluation, and storing results in the SQLite database.

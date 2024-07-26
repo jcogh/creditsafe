@@ -1,22 +1,35 @@
 import sqlite3
 import pandas as pd
 
-# Connect to the database
-conn = sqlite3.connect('credit_risk.db')
 
-# Get list of tables
-cursor = conn.cursor()
-cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-tables = cursor.fetchall()
-print("Tables in the database:")
-for table in tables:
-    print(table[0])
+def get_tables(conn):
+    cursor = conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    return [table[0] for table in cursor.fetchall()]
 
-# Print contents of each table
-for table in tables:
-    print(f"\nContents of {table[0]}:")
-    df = pd.read_sql_query(f"SELECT * FROM {table[0]}", conn)
-    print(df)
 
-# Close the connection
-conn.close()
+def print_table_contents(conn, table_name):
+    print(f"\nContents of {table_name}:")
+    try:
+        df = pd.read_sql_query(f"SELECT * FROM {table_name}", conn)
+        print(df)
+    except pd.io.sql.DatabaseError as e:
+        print(f"Error reading table {table_name}: {e}")
+
+
+def view_database(db_path):
+    try:
+        with sqlite3.connect(db_path) as conn:
+            tables = get_tables(conn)
+            print("\nTables in the database:")
+            for table in tables:
+                print(table)
+
+            for table in tables:
+                print_table_contents(conn, table)
+    except sqlite3.Error as e:
+        print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    view_database('credit_risk.db')

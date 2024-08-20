@@ -6,13 +6,15 @@ CreditSafe is a machine learning project designed to assess credit risk using va
 
 ## Features
 
-- Data preparation and preprocessing
+- Comprehensive data preparation and preprocessing
 - Implementation of multiple machine learning models:
   - Logistic Regression
   - Random Forest
   - XGBoost
-- Model evaluation and comparison
-- Rich console output with progress bars
+  - LightGBM
+- Advanced model evaluation and comparison
+- Detailed console output with progress tracking
+- SQLite database integration for storing results
 
 ## Project Structure
 
@@ -58,7 +60,7 @@ python main.py
 This will execute the following steps:
 1. Data preparation
 2. Model development and evaluation
-3. Results storage
+3. Results storage in the SQLite database
 4. Display of model performance metrics
 
 To view the contents of the database:
@@ -71,20 +73,21 @@ python view_database.py
 
 Currently, the models show the following performance:
 
-- Logistic Regression: Accuracy 0.7000, AUC 0.5000
-- Random Forest: Accuracy 0.5600, AUC 0.5018
-- XGBoost: Accuracy 0.4900, AUC 0.4493
+- **Logistic Regression**: Accuracy 0.7000, AUC 0.5000
+- **Random Forest**: Accuracy 0.5600, AUC 0.5018
+- **XGBoost**: Accuracy 0.4900, AUC 0.4493
+- **LightGBM**: Accuracy (TBD), AUC (TBD)
 
-Note: These results indicate that there's room for improvement in the models' predictive power.
+Note: These results suggest that there is significant room for improvement in the models' predictive power.
 
 ## Future Improvements
 
-- Feature engineering to create more informative predictors
-- Address class imbalance issues
-- Expand hyperparameter tuning
-- Implement feature selection techniques
-- Try additional machine learning models
-- Enhance cross-validation strategies
+- **Feature Engineering**: Develop more informative predictors to enhance model accuracy.
+- **Address Class Imbalance**: Implement techniques to handle imbalanced datasets more effectively.
+- **Hyperparameter Tuning**: Explore a broader range of hyperparameters for optimization.
+- **Feature Selection**: Apply techniques to select the most relevant features for modeling.
+- **Model Expansion**: Experiment with additional machine learning models to improve predictions.
+- **Cross-Validation**: Enhance cross-validation strategies to ensure robust model performance.
 
 ## Contributing
 

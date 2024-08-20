@@ -73,12 +73,20 @@ python view_database.py
 
 Currently, the models show the following performance:
 
-- **Logistic Regression**: Accuracy 0.7000, AUC 0.5000
-- **Random Forest**: Accuracy 0.5600, AUC 0.5018
-- **XGBoost**: Accuracy 0.4900, AUC 0.4493
-- **LightGBM**: Accuracy (TBD), AUC (TBD)
+- **Logistic Regression**: 
+  - Accuracy: 0.4650
+  - AUC: 0.4806
+- **Random Forest**: 
+  - Accuracy: 0.5315
+  - AUC: 0.5024
+- **XGBoost**: 
+  - Accuracy: 0.8710
+  - AUC: 0.4875
+- **LightGBM**: 
+  - Accuracy: 0.8310
+  - AUC: 0.5017
 
-Note: These results suggest that there is significant room for improvement in the models' predictive power.
+Note: These results indicate that there's room for improvement in the models' predictive power, particularly with respect to recall and precision.
 
 ## Future Improvements
 
